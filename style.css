@@ -1,0 +1,387 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/*Estilização do cabeçalho*/
+
+header{
+    min-width: 100%;
+    overflow: hidden;
+    height: 90px;
+    background-color: #161b22;
+    position: fixed;
+}
+
+#conteudoCabecalho{
+    width: 1200px;
+    height: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    
+}
+
+#logoMarca{
+    width: 120px;
+    height: 85px;
+    margin-left: 50px;
+}
+
+#logo{
+    width: 120px;
+    height: 85px;
+}
+
+#menu{
+    width: 630px;
+    height: 85px;
+    margin-left: 50px;
+    box-sizing: border-box;
+}
+
+#menuPrincipal{
+    list-style: none;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.itemListaPrincipal{
+    float: left;
+    height: 40px;
+    width: 120px;
+    margin-right: 5px;
+    margin-right: 5px;
+    text-align: center;
+    font-family: verdana;
+    font-size: 1em;
+    color: white;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+
+.itemListaPrincipal:hover{
+    height: 40px;
+    width: 120px;
+    text-align: center;
+    font-family: verdana;
+    font-size: 1.1em;
+    cursor: pointer;
+    padding-top: 8px;
+}
+
+#redesSociais{
+    width: 160px;
+    height: 85px;
+    margin-right: 50px;
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    
+}
+
+.divRedesSociais{
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.redesSociais{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+/*Estilização do corpo*/
+
+main{
+    min-width: 100%;
+    min-height: 3000px;
+    overflow: hidden;
+    background-color: #15243B;
+}
+
+#banner{
+    width: 100%;
+    height: 700px;
+    background-size: cover;
+    background-image: url(img/banner.jpg);
+    /*background-attachment: fixed;*/
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+#conteudoCorpo{
+    width: 1200px;
+    height: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+#linhaMenuPesquisa{
+    width: inherit;
+    height: 60px;
+    box-sizing: border-box;
+    margin-top: 30px;
+    /*display: flex;
+    align-items: center;*/
+}
+
+#menuHamburguer{
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+    float: left;
+}
+
+#imgMenu{
+    width: 60px;
+    height: 60px;
+}
+
+#menuHamburguer:hover{
+    cursor: pointer;
+}
+
+#menuHamburguer:hover > #subMeuHamburguer{
+    opacity: 1;
+    visibility: visible;
+    transition: 1s;
+}
+
+#subMeuHamburguer{
+    width: 610px;
+    height: 100px;
+    margin-top: -60px;
+    margin-left: 60px;
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#listaGeneros{
+    width: inherit;
+    height: inherit;
+    list-style: none;
+}
+
+.itemListaSubMenu{
+    width: 80px;
+    height: 50px;
+    float: left;
+    padding-top: 12px;
+    color: white;
+    font-family: verdana;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.itemListaSubMenu:hover{
+    height: 50px;
+    width: 80px;
+    text-align: center;
+    font-family: verdana;
+    font-size: 1.1em;
+    cursor: pointer;
+    padding-top: 10px;
+}
+
+#pesquisar{
+    width: 520px;
+    height: 30px;
+    float: right;
+    margin-top: 10px;
+    padding-top: 4px;
+    box-sizing: border-box;
+}
+
+label{
+    font-family: verdana;
+    font-size: 1em;
+    color: white;
+}
+
+#barraPesquisa{
+    width: 350px;
+    height: 20px;
+    padding-left: 5px;
+}
+
+#botaoPesquisa{
+    width: 70px;
+    height: 25px;
+    background-color: #26446E;
+    font-family: verdana;
+    color: white;
+    border-style: hidden;
+}
+
+#botaoPesquisa:hover{
+    cursor: pointer;
+}
+
+#apresentacaoJogos{
+    width: 1200px;
+    min-height: 550px;
+    overflow: hidden;
+    margin-top: 10px;
+    display: flex;
+}
+
+.jogos{
+    width: 350px;
+    height: 500px;
+    background-color: cadetblue;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 25px;
+    margin-top: 25px;
+    box-shadow: 0 0 5px 2px #000000;
+}
+
+.imgJogo{
+    width: inherit;
+    height: 300px;
+    background-color: red;
+}
+
+.capaJogo{
+    width: inherit;
+    height: 300px;
+}
+
+.infoJogo{
+    width: inherit;
+    min-height: 200px;
+    overflow: hidden;
+    background-color: #26446E;
+}
+
+h2{
+    color: white;
+    font-family: verdana;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.txtInfoJogo{
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    color: white;
+    font-family: verdana;
+    font-size: 0.9em;
+}
+
+.generos{
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    color: white;
+    font-family: verdana;
+    font-size: 0.9em;
+}
+
+.saibaMais{
+    width: 120px;
+    height: 50px;
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color: #7994BA;
+    color: white;
+    font-family: verdana;
+    font-size: 1.1em;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 13px;
+    border-radius: 10px;
+    float: left;
+}
+
+.saibaMais:hover{
+    cursor: pointer;
+}
+
+.valor{
+    width: 120px;
+    height: 50px;
+    margin-left: 60px;
+    margin-top: 20px;
+    background-color: #7994BA;
+    color: white;
+    font-family: verdana;
+    font-size: 1.1em;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 13px;
+    border-radius: 10px;
+    float: left;
+}
+
+.valor:hover{
+    cursor: pointer;
+}
+
+#mainEmpresa{
+    width: 100%;
+    height: 600px;
+    background-color: #47576E;
+    padding-top: 10px;
+    margin-top: 60px;
+}
+
+#corpoEmpresa{
+    width: 1200px;
+    height: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+h1{
+    color: white;
+    font-family: verdana;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-top: 60px;
+}
+
+.sobreEmpresa{
+    width: 1000px;
+    height: 400px;
+    text-align: left;
+    color: white;
+    font-family: verdana;
+    font-size: 1.1em;
+    box-sizing: border-box;
+    margin-left: 30px;
+    margin-top: 50px;
+    line-height: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
