@@ -101,7 +101,7 @@ header{
 
 main{
     min-width: 100%;
-    min-height: 3000px;
+    min-height: 5000px;
     overflow: hidden;
     background-color: #15243B;
 }
@@ -118,10 +118,11 @@ main{
 
 #conteudoCorpo{
     width: 1200px;
-    height: inherit;
+    min-height: 700px;
+    height: auto;
+    overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-    box-sizing: border-box;
 }
 
 #linhaMenuPesquisa{
@@ -129,8 +130,6 @@ main{
     height: 60px;
     box-sizing: border-box;
     margin-top: 30px;
-    /*display: flex;
-    align-items: center;*/
 }
 
 #menuHamburguer{
@@ -228,10 +227,12 @@ label{
 
 #apresentacaoJogos{
     width: 1200px;
+    height: auto;
     min-height: 550px;
     overflow: hidden;
     margin-top: 10px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .jogos{
@@ -259,6 +260,7 @@ label{
 .infoJogo{
     width: inherit;
     min-height: 200px;
+    height: auto;
     overflow: hidden;
     background-color: #26446E;
 }
@@ -350,8 +352,8 @@ h1{
     color: white;
     font-family: verdana;
     margin-left: 10px;
-    margin-top: 5px;
     margin-top: 60px;
+    margin-bottom: 20px;
 }
 
 .sobreEmpresa{
@@ -369,7 +371,9 @@ h1{
 
 #mainPromocoes{
     width: 100%;
-    height: 650px;
+    min-height: 650px;
+    height: auto;
+    overflow: hidden;
     background-color: #15243B;
     padding-top: 10px;
     margin-top: 60px;
@@ -377,7 +381,9 @@ h1{
 
 #corpoPromocoes{
     width: 1200px;
-    height: inherit;
+    min-height: 650px;
+    height: auto;
+    overflow: hidden;
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
@@ -386,9 +392,11 @@ h1{
 #apresentacaoPromocoes{
     width: 1200px;
     min-height: 550px;
+    height: auto;
     overflow: hidden;
     margin-top: 10px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .valorPromocoes{
@@ -400,11 +408,96 @@ h1{
     box-sizing: border-box;
 }
 
+#mainDestaques{
+    width: 100%;
+    height: 400px;
+    background-color: #26446E;
+    padding-top: 10px;
+    margin-top: 60px;
+}
 
+#corpoDestaques{
+    width: 1200px;
+    height: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
 
+#destaques{
+    width: 100%;
+    height: 250px;
+    box-sizing: border-box;
+}
 
+.circuloDestaques{
+    width: 250px;
+    height: 250px;
+    border-radius: 200px;
+    background-color: #7994BA;
+    margin-left: 25px;
+    margin-right: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+}
 
+.circuloJogo{
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+}
 
+.circuloDestaques:hover{
+    cursor: pointer;
+    width: 240px;
+    height: 240px;
+    border: 5px solid white;
+}
+
+#mainInformacoes{
+    width: 100%;
+    height: 400px;
+    background-color: #15243B;
+    margin-top: 40px;
+    padding-top: 10px;
+}
+
+#corpoInformacoes{
+    width: 1200px;
+    height: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+#lojas{
+    width: 600px;
+    height: 500px;
+    background-color: aqua;
+    float: left;
+}
+
+.endereco{
+    width: 600px;
+    height: 200px;
+    background-color: chartreuse;
+}
+
+h3{
+    color: white;
+    font-family: verdana;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.imgEndereco{
+    width: 140px;
+    height: 140px;
+    background-color: black;
+    float: left;
+}
 
 
 
