@@ -29,10 +29,65 @@
             </div>
         </header>
         <main>
-        
+            <div id="faixaMenu">
+                <div id="conteudoFaixaMenu">
+                    <div class="itemMenu">
+                        <div class="iconMenu">
+                            <img src="../img/produtos.png" class="imgIcon">
+                        </div>
+                        <div class="opcaoMenu">
+                            Adm. de Produtos
+                        </div>
+                    </div>
+                    <div class="itemMenu">
+                        <div class="iconMenu">
+                            <img src="../img/clipboard.png" class="imgIcon">
+                        </div>
+                        <div class="opcaoMenu">
+                            Adm. de Categorias
+                        </div>
+                    </div>
+                    <div class="itemMenu">
+                        <div class="iconMenu">
+                            <img src="../img/phone.png" class="imgIcon">
+                        </div>
+                        <div class="opcaoMenu">
+                            Contatos
+                        </div>
+                    </div>
+                    <div class="itemMenu">
+                        <div class="iconMenu">
+                            <img src="../img/usuario.png" class="imgIcon">
+                        </div>
+                        <div class="opcaoMenu">
+                            Usuários
+                        </div>
+                    </div>
+                    <div id="usuario">
+                        <div id="mensagem">
+                            Bem vindo(a) Wanda
+                        </div>
+                        <div id="imagem">
+                            <img src="../img/usuario.png" id="imgPerfil">
+                        </div>
+                        <div id="logout">
+                            Logout
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="conteudoCadastro">
+                <h1 class="titulo">
+                    Selecione uma opção no menu
+                </h1>
+            </div>
         </main>
         <footer>
-        
+            <div class="rodape">
+                <span>Copyright &copy; 2021 | Welington Pincer</span>
+                <br>
+                <span>Todos os direitos reservados - Política de privacidade</span>
+            </div>
         </footer>
     </body>
 </html>
