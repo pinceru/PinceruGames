@@ -80,8 +80,41 @@
             </div>
             <div class="conteudoCadastro">
                 <h1 class="titulo">
-                    Selecione uma opção no menu
+                    Categorias
                 </h1>
+                <form id="formCadastro" method="post" action="" name="frmCategorias">
+                    <label class="label"> Cadastre uma categoria </label>
+                    <input type="text" name="txtCategoria" class="input" placeholder="Insira o nome da categoria" maxlength="50">
+                    <input type="submit" name="btnCategoria" value="Cadastrar" class="botaoCadastrar">
+                </form>
+                <div class="crud">
+                    <div class="linhaTitulo">
+                        <div class="id">
+                            <p class="textoCrud"> ID </p>
+                        </div>
+                        <div class="nome">
+                            <p class="textoCrud"> Nome da Categoria </p>
+                        </div>
+                        <div class="opcoes">
+                            <p class="textoCrud"> Opções </p>
+                        </div>
+                    </div>
+                    <div class="linhaConteudo">
+                        <div class="id">
+                            <p class="textoCrud"> </p>
+                        </div>
+                        <div class="nome">
+                            <p class="textoCrud"> </p>
+                        </div>
+                        <div class="opcoes">
+                            <img src="../img/pesquisar.png" class="iconCrud" title="Pesquisar">
+                            
+                            <img src="../img/fechar.png" class="iconCrud" title="Excluir">
+                            
+                            <img src="../img/opcoes.png" class="iconCrud" title="Editar">
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
         <footer>

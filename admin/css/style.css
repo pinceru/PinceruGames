@@ -81,6 +81,7 @@ main{
     height: auto;
     overflow: hidden;
     background-color: #26446E;
+    padding-bottom: 30px;
 }
 
 #faixaMenu{
@@ -100,11 +101,16 @@ main{
     padding-left: 50px;
 }
 
+a{
+    text-decoration: none;
+}
+
 .itemMenu{
-    width: 150px;
+    width: 140px;
     height: 100px;
     margin: 5px;
     box-sizing: border-box;
+    margin-left: 30px;
 }
 
 .itemMenu:hover{
@@ -211,4 +217,105 @@ footer{
     text-align: center;
     box-sizing: border-box;
     padding-top: 30px;
+}
+
+.label{
+    color: white;
+    font-family: verdana;
+    font-size: 1.2em;
+    margin-left: 20px;
+}
+
+.input{
+    width: 300px;
+    height: 25px;
+    outline: none;
+    box-sizing: border-box;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 10px;
+    font-family: verdana;
+}
+
+.botaoCadastrar{
+    width: 80px;
+    height: 25px;
+    background-color: #161b22;
+    font-family: verdana;
+    color: white;
+    border-style: hidden;
+    margin-left: 10px;
+}
+
+.botaoCadastrar:hover{
+    cursor: pointer;
+    background-color: #15243B;
+}
+
+.crud{
+    margin-top: 50px;
+    min-height: 80px;
+    height: auto;
+    overflow: hidden;
+    width: 1200px;
+    box-sizing: border-box;
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+    border-top: 3px solid white;
+}
+
+.linhaTitulo{
+    height: 40px;
+    width: inherit;
+    display: flex;
+    border-bottom: 3px solid white;
+    text-align: center;
+    background-color: #15243B;;
+}
+
+.id{
+    height: inherit;
+    width: 20%;
+    box-sizing: border-box;
+}
+
+.nome{
+    height: inherit;
+    width: 60%;
+    box-sizing: border-box;
+    border-right: 3px solid white;
+    border-left: 3px solid white;
+}
+
+.opcoes{
+    height: inherit;
+    width: 20%;
+    box-sizing: border-box;
+}
+
+.textoCrud{
+    color: white;
+    font-family: verdana;
+    font-size: 1.2em;
+    padding-top: 10px;
+}
+
+.linhaConteudo{
+    height: 40px;
+    width: inherit;
+    display: flex;
+    border-bottom: 3px solid white;
+    text-align: center;
+}
+
+.iconCrud{
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-top: 2.5px;
+}
+
+.iconCrud:hover{
+    cursor: pointer;
 }
