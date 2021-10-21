@@ -82,7 +82,7 @@
                 <h1 class="titulo">
                     Categorias
                 </h1>
-                <form id="formCadastro" method="post" action="" name="frmCategorias">
+                <form id="formCadastro" method="post" action="../controles/recebeCategoria.php" name="frmCategorias">
                     <label class="label"> Cadastre uma categoria </label>
                     <input type="text" name="txtCategoria" class="input" placeholder="Insira o nome da categoria" maxlength="50">
                     <input type="submit" name="btnCategoria" value="Cadastrar" class="botaoCadastrar">
