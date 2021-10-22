@@ -6,12 +6,12 @@ Autor: Welington Pincer
 ********************************************************/
     
 //Import do arquivo de conexão com o Banco
-require_once('../db/conexaoMysql.php');
+require_once('conexaoMysql.php');
 
 //Função para inserir categoria no banco
 function inserirCategoria($categoria){
     //Guardando o script se inserir no Banco dentro de uma variável
-    $sql = "insert into tbl_categoria (nome) value ('". $categoria ."')";
+    $sql = "insert into tbl_categoria (nome) values ('". $categoria['nome'] ."')";
     
     //Chamando função de conexão com o Banco
     $conexao = conexaoMysql();

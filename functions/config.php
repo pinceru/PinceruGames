@@ -5,14 +5,14 @@ Data: 21/10/2021
 Autor: Welington Pincer
 *********************************************************************************/    
 
-//Constante da estrutura de pastas para o import
-define('SRC', $_SERVER['DOCUMENT_ROOT'].'/ds2t20212/welington/pinceruGames/');
+/*//Constante da estrutura de pastas para o import
+define('SRC', $_SERVER['DOCUMENT_ROOT'].'/ds2t20212/welington/pinceruGames/');*/
 
 //Variaveis e constantes para conexão com o Banco de Dados
 const DB_SERVER = 'localhost';
-const BD_USER = 'root';
-const BD_PASSWORD = 'bcd127';
-const BD_DATABASE = 'dbpincerugames';
+const DB_USER = 'root';
+const DB_PASSWORD = 'bcd127';
+const DB_DATABASE = 'dbpincerugames';
 
 //Mensagens de erro
 const ERRO_CONEXAO = "<script> alert('Não foi possivel se conectar ao Banco de Dados. Entre em contato com o administrador.')</script>";
@@ -21,5 +21,10 @@ const ERRO_CAIXA_VAZIA = "<script> alert('Não foi possivel realizar o cadastro 
 window.history.back();</script>";
 
 const ERRO_MAXLENGTH = "<script> alert('Não foi possivel realizar o cadastro no Banco de Dados, pois algum campo excedeu o número de caractéres permitidos.');
+window.history.back();</script>";
+
+const MSG_CADASTRO_SUCESSO = 'Cadastro realizado com sucesso!';
+
+const MSG_ERRO = "<script> alert('Não foi possivel realizar o cadastro no Banco de Dados.');
 window.history.back();</script>";
 ?>

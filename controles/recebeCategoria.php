@@ -9,7 +9,7 @@ Autor: Welington Pincer
 require_once('../functions/config.php');
 
 //Import do arquivo para inserir no BD
-require_once(SRC.'db/inserirCategoria.php');
+require_once('../db/inserirCategoria.php');
 
 //Declaração de variaveis
 $nome = (string) null;
@@ -23,10 +23,23 @@ if(isset($_POST['btnCategoria'])) {
         echo(ERRO_CAIXA_VAZIA);
     } elseif(strlen($nome) > 50) {
         echo(ERRO_MAXLENGTH);
+    } else {
+    
+    $categoria = array (
+        "nome" => $nome
+    );
+    
+    if(inserirCategoria($categoria)) {
+        echo("
+                <script>
+                    alert('". MSG_CADASTRO_SUCESSO ."');
+                    window.location.href = '../admin/categorias.php';
+                </script>
+            ");
+    } else {
+        echo(MSG_ERRO);
     }
-} else {
-    //Criação da variável para a inserção
-    "nome" = $nome;
+    } 
 }
 
 
