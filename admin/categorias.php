@@ -1,3 +1,7 @@
+<?php
+    require_once('../controles/exibeCategoria.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -99,21 +103,33 @@
                             <p class="textoCrud"> Opções </p>
                         </div>
                     </div>
+                    
+                    <?php
+                        $categoria = exibirCategorias();
+                    
+                        while($rsCategoria = mysqli_fetch_assoc($categoria)) {
+                    ?>
+                    
                     <div class="linhaConteudo">
                         <div class="id">
-                            <p class="textoCrud"> </p>
+                            <p class="textoCrud"> <?=$rsCategoria['id_categoria']?></p>
                         </div>
                         <div class="nome">
-                            <p class="textoCrud"> </p>
+                            <p class="textoCrud"> <?=$rsCategoria['nome']?> </p>
                         </div>
                         <div class="opcoes">
                             <img src="../img/pesquisar.png" class="iconCrud" title="Pesquisar">
                             
-                            <img src="../img/fechar.png" class="iconCrud" title="Excluir">
+                            <a onclick="return confirm('Tem certeza que deseja excluir a categoria selecionada?');" href="../controles/excluiCategoria.php?id=<?=$rsCategoria['id_categoria']?>">
+                                <img src="../img/fechar.png" class="iconCrud" title="Excluir">
+                            </a>
                             
                             <img src="../img/opcoes.png" class="iconCrud" title="Editar">
                         </div>
                     </div>
+                    <?php
+                          }
+                    ?>
                 </div>
             </div>
         </main>

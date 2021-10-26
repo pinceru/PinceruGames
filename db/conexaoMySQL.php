@@ -5,6 +5,9 @@ Data: 21/10/2021
 Autor: Welington Pincer
 **********************************************************************/    
 
+//Import do aruivo de config
+require_once('../functions/config.php');
+
 //Abrindo a conexão com o Banco de Dados
 function conexaoMysql() {
     //Declaração de variaveis para a conexão com o Banco

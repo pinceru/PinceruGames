@@ -27,4 +27,8 @@ const MSG_CADASTRO_SUCESSO = 'Cadastro realizado com sucesso!';
 
 const MSG_ERRO = "<script> alert('Não foi possivel realizar o cadastro no Banco de Dados.');
 window.history.back();</script>";
+
+const MSG_EXCLUIR = "<script> alert('Registro excluido com sucesso do Banco de Dados');
+window.location.href='../admin/categorias.php'; </script>";
+
 ?>
