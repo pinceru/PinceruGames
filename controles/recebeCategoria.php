@@ -11,12 +11,22 @@ require_once('../functions/config.php');
 //Import do arquivo para inserir no BD
 require_once('../db/inserirCategoria.php');
 
+//Omport do arquivo para atualizar dados no Banco
+require_once('../db/atualizarCategoria.php');
+
 //Declaração de variaveis
 $nome = (string) null;
 
+//Verificando se o id está chegando pela url
+if(isset($_GET['id'])) {
+    $id = (int) $_GET['id'];
+} else {
+    $id = 0;
+}
+
 //$_SERVER['REQUEST_METHOD'] - Serve para verificar qual o tipo de requisição foi encaminhada pelo form (GET / POST)
 //Verificando se a requisição foi "POST"
-if(isset($_POST['btnCategoria'])) {
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = $_POST['txtCategoria'];
     
     if($nome == "") {
@@ -26,19 +36,33 @@ if(isset($_POST['btnCategoria'])) {
     } else {
     
     $categoria = array (
-        "nome" => $nome
+        "nome" => $nome,
+        "id_categoria" => $id
     );
-    
-    if(inserirCategoria($categoria)) {
-        echo("
-                <script>
-                    alert('". MSG_CADASTRO_SUCESSO ."');
-                    window.location.href = '../admin/categorias.php';
-                </script>
-            ");
-    } else {
-        echo(MSG_ERRO);
-    }
+        
+    if(strtoupper($_GET["modo"]) == "CADASTRAR") {
+         if(inserirCategoria($categoria)) {
+            echo("
+                    <script>
+                        alert('". MSG_CADASTRO_SUCESSO ."');
+                        window.location.href = '../admin/categorias.php';
+                    </script>
+                ");
+            } else {
+                echo(MSG_ERRO);
+            }
+        } elseif((strtoupper($_GET["modo"]) == "ATUALIZAR")) {
+            if(editarCategoria($categoria)) {
+                echo("
+                    <script>
+                        alert('". MSG_ATUALIZADO_SUCESSO ."');
+                        window.location.href = '../admin/categorias.php';
+                    </script>
+                ");
+            } else {
+                echo(MSG_ERRO);
+            }
+        }
     } 
 }
 

@@ -1,5 +1,26 @@
 <?php
-    require_once('../controles/exibeCategoria.php');
+//Ativando a utilização das variáveis de sessão
+session_start();
+
+//Declarando variáveis para o formulário
+$nome = (string) null;
+$id = (int) 0;
+$modo = (string) "Cadastrar";
+    
+//Import do arquivo de configurção
+require_once('../functions/config.php');
+
+//Import do arquivo para exibir categoria
+require_once('../controles/exibeCategoria.php');
+
+//Verificando se existe a variável de sessão
+if(isset($_SESSION['categoria'])) {
+    $nome = $_SESSION['categoria']['nome'];
+    $id = $_SESSION['categoria']['id_categoria'];
+    $modo = "Atualizar";
+    //Eliminando a variável da memória
+    unset($_SESSION['categoria']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -86,10 +107,10 @@
                 <h1 class="titulo">
                     Categorias
                 </h1>
-                <form id="formCadastro" method="post" action="../controles/recebeCategoria.php" name="frmCategorias">
+                <form id="formCadastro" method="post" action="../controles/recebeCategoria.php?modo=<?=$modo?>&id=<?=$id?>" name="frmCategorias">
                     <label class="label"> Cadastre uma categoria </label>
-                    <input type="text" name="txtCategoria" class="input" placeholder="Insira o nome da categoria" maxlength="50">
-                    <input type="submit" name="btnCategoria" value="Cadastrar" class="botaoCadastrar">
+                    <input type="text" name="txtCategoria" class="input" placeholder="Insira o nome da categoria" maxlength="50" value="<?=$nome?>">
+                    <input type="submit" name="btnCategoria" value="<?=$modo?>" class="botaoCadastrar">
                 </form>
                 <div class="crud">
                     <div class="linhaTitulo">
@@ -105,8 +126,10 @@
                     </div>
                     
                     <?php
+                        //Chamando a função de exibir categoria e guardadndo numa variável
                         $categoria = exibirCategorias();
-                    
+                        
+                        //Transformando os dados recebidos em um array e usando uma repetição para repeti-la 
                         while($rsCategoria = mysqli_fetch_assoc($categoria)) {
                     ?>
                     
@@ -124,7 +147,9 @@
                                 <img src="../img/fechar.png" class="iconCrud" title="Excluir">
                             </a>
                             
-                            <img src="../img/opcoes.png" class="iconCrud" title="Editar">
+                            <a href="../controles/editaCategoria.php?id=<?=$rsCategoria['id_categoria']?>">
+                                <img src="../img/opcoes.png" class="iconCrud" title="Editar">
+                            </a>
                         </div>
                     </div>
                     <?php

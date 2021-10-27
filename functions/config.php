@@ -31,4 +31,5 @@ window.history.back();</script>";
 const MSG_EXCLUIR = "<script> alert('Registro excluido com sucesso do Banco de Dados');
 window.location.href='../admin/categorias.php'; </script>";
 
+const MSG_ATUALIZADO_SUCESSO = 'Cadastro atualizado com sucesso!';
 ?>

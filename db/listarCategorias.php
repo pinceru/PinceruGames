@@ -23,4 +23,18 @@ function listarCategoria() {
     return $select;
 }
 
+//Função para buscar categoria pelo id
+function buscarCategoria($idCategoria) {
+    //Guardando o script sql dentro de uma vatriável
+    $sql = "select * from tbl_categoria where id_categoria = " .$idCategoria;
+    
+    //Abrindo conexão com o banco
+    $conexao = conexaoMysql();
+    
+    //Solicitando a execução do script ao DB
+    $select = mysqli_query($conexao, $sql);
+    
+    return $select;
+}
+
 ?>
