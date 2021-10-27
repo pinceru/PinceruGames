@@ -1,28 +1,3 @@
-<?php
-//Ativando a utilização das variáveis de sessão
-session_start();
-
-//Declarando variáveis para o formulário
-$nome = (string) null;
-$id = (int) 0;
-$modo = (string) "Cadastrar";
-    
-//Import do arquivo de configurção
-require_once('../functions/config.php');
-
-//Import do arquivo para exibir categoria
-require_once('../controles/exibeCategoria.php');
-
-//Verificando se existe a variável de sessão
-if(isset($_SESSION['categoria'])) {
-    $nome = $_SESSION['categoria']['nome'];
-    $id = $_SESSION['categoria']['id_categoria'];
-    $modo = "Atualizar";
-    //Eliminando a variável da memória
-    unset($_SESSION['categoria']);
-}
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -82,7 +57,7 @@ if(isset($_SESSION['categoria'])) {
                                 <img src="../img/phone.png" class="imgIcon">
                             </div>
                             <div class="opcaoMenu">
-                                Adm. de Contatos    
+                                Adm. de Contatos
                             </div>
                         </div>
                     </a>
@@ -92,7 +67,7 @@ if(isset($_SESSION['categoria'])) {
                                 <img src="../img/usuario.png" class="imgIcon">
                             </div>
                             <div class="opcaoMenu">
-                                Adm. de Usuários    
+                                Adm. de Usuários
                             </div>
                         </div>
                     </a>
@@ -111,57 +86,20 @@ if(isset($_SESSION['categoria'])) {
             </div>
             <div class="conteudoCadastro">
                 <h1 class="titulo">
-                    Categorias
+                    Usuarios
                 </h1>
-                <form id="formCadastro" method="post" action="../controles/recebeCategoria.php?modo=<?=$modo?>&id=<?=$id?>" name="frmCategorias">
-                    <label class="label"> Cadastre uma categoria </label>
-                    <input type="text" name="txtCategoria" class="input" placeholder="Insira o nome da categoria" maxlength="50" value="<?=$nome?>">
-                    <input type="submit" name="btnCategoria" value="<?=$modo?>" class="botaoCadastrar">
+                <form name="frmUsuario" method="post" action="" id="formCadastro">
+                    <div class="separarInputs">
+                        <label class="label"> Nome </label>
+                        <input type="text" name="txtNome" class="input" placeholder="Insira um nome" maxlength="100" value="">
+                        <label class="label"> Login </label>
+                        <input type="text" name="txtLogin" class="input" placeholder="Insira um nome" maxlength="100" value="">
+                    </div>
+                    <div class="separarInputs">
+                        <label class="label"> Senha </label>
+                        <input type="text" name="txtSenha" class="input" placeholder="Insira um nome" maxlength="100" value="">
+                    </div>
                 </form>
-                <div class="crud">
-                    <div class="linhaTitulo">
-                        <div class="id">
-                            <p class="textoCrud"> ID </p>
-                        </div>
-                        <div class="nome">
-                            <p class="textoCrud"> Nome da Categoria </p>
-                        </div>
-                        <div class="opcoes">
-                            <p class="textoCrud"> Opções </p>
-                        </div>
-                    </div>
-                    
-                    <?php
-                        //Chamando a função de exibir categoria e guardadndo numa variável
-                        $categoria = exibirCategorias();
-                        
-                        //Transformando os dados recebidos em um array e usando uma repetição para repeti-la 
-                        while($rsCategoria = mysqli_fetch_assoc($categoria)) {
-                    ?>
-                    
-                    <div class="linhaConteudo">
-                        <div class="id">
-                            <p class="textoCrud"> <?=$rsCategoria['id_categoria']?></p>
-                        </div>
-                        <div class="nome">
-                            <p class="textoCrud"> <?=$rsCategoria['nome']?> </p>
-                        </div>
-                        <div class="opcoes">
-                            <img src="../img/pesquisar.png" class="iconCrud" title="Pesquisar">
-                            
-                            <a onclick="return confirm('Tem certeza que deseja excluir a categoria selecionada?');" href="../controles/excluiCategoria.php?id=<?=$rsCategoria['id_categoria']?>">
-                                <img src="../img/fechar.png" class="iconCrud" title="Excluir">
-                            </a>
-                            
-                            <a href="../controles/editaCategoria.php?id=<?=$rsCategoria['id_categoria']?>">
-                                <img src="../img/opcoes.png" class="iconCrud" title="Editar">
-                            </a>
-                        </div>
-                    </div>
-                    <?php
-                          }
-                    ?>
-                </div>
             </div>
         </main>
         <footer>

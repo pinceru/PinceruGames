@@ -319,3 +319,7 @@ footer{
 .iconCrud:hover{
     cursor: pointer;
 }
+
+.separarInputs{
+    margin-bottom: 20px;
+}

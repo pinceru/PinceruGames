@@ -155,7 +155,9 @@ main{
 }
 
 #subMeuHamburguer{
-    width: 610px;
+    min-width: 610px;
+    width: auto;
+    overflow: hidden;
     height: 100px;
     margin-top: -60px;
     margin-left: 60px;
@@ -416,7 +418,9 @@ h1{
 
 #mainDestaques{
     width: 100%;
-    height: 400px;
+    min-height: 550px;
+    height: auto;
+    overflow: hidden;
     background-color: #26446E;
     padding-top: 10px;
     margin-top: 60px;
