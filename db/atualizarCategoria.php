@@ -1,12 +1,12 @@
 <?php
-/*****************************************************************
-Objetivo: Arquivo atualizar dados de clientes existentes no Banco
+/*******************************************************************
+Objetivo: Arquivo atualizar dados de categorias existentes no Banco
 Data: 27/10/2021
 Autor: Welington Pincer
-*****************************************************************/
+*******************************************************************/
 
 //Import do arquivo que estabalece conexão com o Banco
-require_once('conexaoMySQL.php');
+require_once('../db/conexaoMySQL.php');
 
 //Função para editar uma categoria cadastrada
 function editarCategoria($categoria) {

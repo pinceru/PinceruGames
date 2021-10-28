@@ -9,10 +9,10 @@ Autor: Welington Pincer
 require_once('../functions/config.php');
 
 //Import do arquivo para inserir no BD
-require_once('../db/inserirCategoria.php');
+require_once(SRC.'db/inserirCategoria.php');
 
 //Omport do arquivo para atualizar dados no Banco
-require_once('../db/atualizarCategoria.php');
+require_once(SRC.'db/atualizarCategoria.php');
 
 //Declaração de variaveis
 $nome = (string) null;
@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo(ERRO_MAXLENGTH);
     } else {
     
-    $categoria = array (
+    $categoria = array(
         "nome" => $nome,
         "id_categoria" => $id
     );
@@ -51,7 +51,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             } else {
                 echo(MSG_ERRO);
             }
-        } elseif((strtoupper($_GET["modo"]) == "ATUALIZAR")) {
+        } elseif(strtoupper($_GET["modo"]) == "ATUALIZAR") {
             if(editarCategoria($categoria)) {
                 echo("
                     <script>

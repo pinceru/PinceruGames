@@ -6,7 +6,7 @@ Autor: Welington Pincer
 ********************************************************/
     
 //Import do arquivo de conexão com o Banco
-require_once('conexaoMysql.php');
+require_once('../db/conexaoMysql.php');
 
 //Função para inserir categoria no banco
 function inserirCategoria($categoria){

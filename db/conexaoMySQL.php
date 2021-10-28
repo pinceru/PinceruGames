@@ -5,8 +5,7 @@ Data: 21/10/2021
 Autor: Welington Pincer
 **********************************************************************/    
 
-//Import do aruivo de config
-require_once('../functions/config.php');
+
 
 //Abrindo a conexão com o Banco de Dados
 function conexaoMysql() {
@@ -20,7 +19,6 @@ function conexaoMysql() {
     if($conexao = mysqli_connect($server, $user, $password, $database)) {
         return $conexao;
     } else {
-        echo(ERRO_CONEXAO);
         return false;
     }
 }

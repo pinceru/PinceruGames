@@ -287,6 +287,21 @@ footer{
     border-left: 3px solid white;
 }
 
+.nomeUsuario{
+    height: inherit;
+    width: 30%;
+    box-sizing: border-box;
+    border-right: 3px solid white;
+    border-left: 3px solid white;
+}
+
+.login{
+    height: inherit;
+    width: 30%;
+    box-sizing: border-box;
+    border-right: 3px solid white;
+}
+
 .opcoes{
     height: inherit;
     width: 20%;

@@ -11,7 +11,7 @@ $modo = (string) "Cadastrar";
 require_once('../functions/config.php');
 
 //Import do arquivo para exibir categoria
-require_once('../controles/exibeCategoria.php');
+require_once(SRC.'controles/exibeCategoria.php');
 
 //Verificando se existe a variável de sessão
 if(isset($_SESSION['categoria'])) {
@@ -33,82 +33,13 @@ if(isset($_SESSION['categoria'])) {
     <link href="css/style.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <div id="conteudoCabecalho">
-                <div id="conteudoEsquerdo">
-                    <div id="linhaSuperior">
-                        <div id="cms">
-                            <label> C M S </label>
-                        </div>
-                        <div id="titulo">
-                            <label> PINCERU GAMES </label>
-                        </div>
-                    </div>
-                    <div id="linhaInferior">
-                        <label> Gerenciamento do conteúdo do site</label>
-                    </div>
-                </div>
-                <div id="conteudoDireito">
-                    <img src="../img/logoMarca.PNG" id="logo" title="Logo Pinceru Games">
-                </div>
-            </div>
-        </header>
+        <?php
+            require_once('header.php');
+        ?>
         <main>
-            <div id="faixaMenu">
-                <div id="conteudoFaixaMenu">
-                    <a href="produtos.php">
-                        <div class="itemMenu">
-                            <div class="iconMenu">
-                                <img src="../img/produtos.png" class="imgIcon">
-                            </div>
-                            <div class="opcaoMenu">
-                                Adm. de Produtos
-                            </div>
-                        </div>
-                    </a>
-                    <a href="categorias.php">
-                        <div class="itemMenu">
-                            <div class="iconMenu">
-                                <img src="../img/clipboard.png" class="imgIcon">
-                            </div>
-                            <div class="opcaoMenu">
-                                Adm. de Categorias
-                            </div>
-                        </div>
-                    </a>
-                    <a href="contatos.php">
-                        <div class="itemMenu">
-                            <div class="iconMenu">
-                                <img src="../img/phone.png" class="imgIcon">
-                            </div>
-                            <div class="opcaoMenu">
-                                Adm. de Contatos    
-                            </div>
-                        </div>
-                    </a>
-                    <a href="usuarios.php">
-                        <div class="itemMenu">
-                            <div class="iconMenu">
-                                <img src="../img/usuario.png" class="imgIcon">
-                            </div>
-                            <div class="opcaoMenu">
-                                Adm. de Usuários    
-                            </div>
-                        </div>
-                    </a>
-                    <div id="usuario">
-                        <div id="mensagem">
-                            Bem vindo(a) Wanda
-                        </div>
-                        <div id="imagem">
-                            <img src="../img/usuario.png" id="imgPerfil">
-                        </div>
-                        <div id="logout">
-                            Logout
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php
+                require_once('menu.php');
+            ?>
             <div class="conteudoCadastro">
                 <h1 class="titulo">
                     Categorias
@@ -164,12 +95,8 @@ if(isset($_SESSION['categoria'])) {
                 </div>
             </div>
         </main>
-        <footer>
-            <div class="rodape">
-                <span>Copyright &copy; 2021 | Welington Pincer</span>
-                <br>
-                <span>Todos os direitos reservados - Política de privacidade</span>
-            </div>
-        </footer>
+        <?php
+            require_once('footer.php');
+        ?>
     </body>
 </html>

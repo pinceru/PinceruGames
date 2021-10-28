@@ -9,17 +9,17 @@ Autor: Welington Pincer
 require_once('../functions/config.php');
 
 //Import do arquivo com a função de excluir
-require_once(SRC.'db/excluirCategoria.php');
+require_once(SRC.'db/excluirUsuario.php');
 
 //Pegando o id pela index, no link da imagem excluir
-$idCategoria = $_GET['id'];
+$idUsuario = $_GET['id'];
 
 //Chamando a função de excluir e encaminhando o id que será excluído do Banco de Dados
-if(excluirCategoria($idCategoria)) {
+if(excluirUsuario($idUsuario)) {
     echo("
                     <script>
                         alert('". MSG_EXCLUIR ."');
-                        window.location.href = '../admin/categorias.php';
+                        window.location.href = '../admin/usuarios.php';
                     </script>
                 ");
 } else {

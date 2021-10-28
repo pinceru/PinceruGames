@@ -9,7 +9,7 @@ Autor: Welington Pincer
 require_once('../functions/config.php');
 
 //Import da função de buscar categorias
-require_once('../db/listarCategorias.php');
+require_once(SRC.'db/listarCategorias.php');
 
 //Recebendo o id da categoria pela url
 $idCategoria = $_GET['id'];

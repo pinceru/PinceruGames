@@ -1,3 +1,8 @@
+<?php
+    require_once('functions/config.php');
+    require_once(SRC.'controles/exibeCategoria.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -45,13 +50,15 @@
                         <img src="img/menuHamburguer.png" id="imgMenu">
                         <div id="subMeuHamburguer">
                             <ul id="listaGeneros">
-                                <li class="itemListaSubMenu"> Aventura </li>
-                                <li class="itemListaSubMenu"> Ação </li>
-                                <li class="itemListaSubMenu"> Estratégia </li>
-                                <li class="itemListaSubMenu"> RPG </li>
-                                <li class="itemListaSubMenu"> Esporte </li>
-                                <li class="itemListaSubMenu"> Online </li>
-                                <li class="itemListaSubMenu"> Simulação </li>
+                                <?php
+                                    $listar = exibirCategorias();
+                                    
+                                    while($rsCategorias = mysqli_fetch_assoc($listar)) {
+                                ?>
+                                    <li class="itemListaSubMenu"> <?=$rsCategorias['nome']?> </li>
+                                <?php
+                                     }
+                                ?>
                             </ul>
                         </div>
                     </div>
