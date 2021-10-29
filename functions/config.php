@@ -5,8 +5,11 @@ Data: 21/10/2021
 Autor: Welington Pincer
 *********************************************************************************/    
 
-//Constante da estrutura de pastas para o import
-define('SRC', $_SERVER['DOCUMENT_ROOT'].'/ds2t20212/welington/ProjetoPinceruGames/');
+//Constante da estrutura de pastas para o import no SENAI
+//define('SRC', $_SERVER['DOCUMENT_ROOT'].'/ds2t20212/welington/ProjetoPinceruGames/');
+
+//Constante da estrutura de pastas para o import em casa
+define('SRC', $_SERVER['DOCUMENT_ROOT'].'/crud/');
 
 //Variaveis e constantes para conexão com o Banco de Dados
 const DB_SERVER = 'localhost';
