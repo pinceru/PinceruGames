@@ -19,6 +19,7 @@ $nome = (string) null;
 $login = (string) null;
 $senha = (string) null;
 $confirm = (string) null;
+$criptografia = (string) null;
 
 //Verificando se o id está chegando pela url
 if(isset($_GET['id'])) {
@@ -48,11 +49,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif (strlen($senha) < 3) {
         echo(ERRO_MINLENGTH);
     } else {
+        //Criptografando a senha
+        $criptografia = sha1($senha);
+        
         //Criando um array com os valores resgatados 
         $arrayUsuario = array(
             "nome" => $nome,
             "login" => $login,
-            "senha" => $senha,
+            "senha" => $criptografia,
             "id_usuario" => $id
         );
         

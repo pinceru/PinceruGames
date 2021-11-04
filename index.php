@@ -328,18 +328,18 @@
                     </div>
                     <div id="contatos">
                         <h1> Entre em contato </h1>
-                        <form id="frmContatos" name="frmContatos" method="post">
+                        <form id="frmContatos" name="frmContatos" method="post" action="controles/recebeContato.php">
                             <div class="divContatos">
                                 <label> Nome </label>
-                                <input type="text" name="txtNome" class="inputContatos">
+                                <input type="text" name="txtNome" class="inputContatos" maxlength="100">
                             </div>
                             <div class="divContatos">
                                 <label> E-mail </label>
-                                <input type="email" name="txtEmail" class="inputContatos">
+                                <input type="email" name="txtEmail" class="inputContatos" maxlength="100">
                             </div>
                             <div class="divContatos">
                                 <label> Celular </label>
-                                <input type="text" name="txtCelular" class="inputContatos">
+                                <input type="text" name="txtCelular" class="inputContatos" maxlength="15">
                             </div>
                             <input type="submit" name="btnEnviar" value="Enviar" id="btnContatos">
                         </form>

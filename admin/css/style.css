@@ -279,6 +279,12 @@ footer{
     box-sizing: border-box;
 }
 
+.idContato{
+    height: inherit;
+    width: 10%;
+    box-sizing: border-box;
+}
+
 .nome{
     height: inherit;
     width: 60%;
@@ -306,6 +312,28 @@ footer{
     height: inherit;
     width: 20%;
     box-sizing: border-box;
+}
+
+.nomeContato{
+    height: inherit;
+    width: 30%;
+    box-sizing: border-box;
+    border-right: 3px solid white;
+    border-left: 3px solid white;
+}
+
+.numero{
+    height: inherit;
+    width: 25%;
+    box-sizing: border-box;
+    border-right: 3px solid white;
+}
+
+.email{
+    height: inherit;
+    width: 35%;
+    box-sizing: border-box;
+    border-right: 3px solid white;
 }
 
 .textoCrud{

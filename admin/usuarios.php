@@ -58,7 +58,7 @@ if(isset($_SESSION['usuario'])) {
                         </div>
                         <div class="separarInputs">
                             <label class="label"> Senha </label>
-                            <input type="password" name="txtSenha" class="input" placeholder="Insira uma senha" maxlength="100" value="<?=$senha?>">
+                            <input type="password" name="txtSenha" class="input" placeholder="Insira uma senha" maxlength="100" value="">
                             <label class="label"> Confirmar </label>
                             <input type="password" name="txtConfirmSenha" class="input" placeholder="Confirme sua senha" maxlength="100" value="">
                             <input type="submit" name="btnUsuario" value="<?=$modo?>" class="botaoCadastrar">
