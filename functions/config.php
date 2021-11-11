@@ -42,4 +42,20 @@ window.history.back();</script>";
 const MSG_EXCLUIR = 'Registro excluido com sucesso do Banco de Dados';
 
 const MSG_ATUALIZADO_SUCESSO = 'Cadastro atualizado com sucesso!';
+
+const TAMANHO_FILE = "5120";
+
+$extensoesPermitidas = array("image/png", "image/jpg", "image/jpeg");
+define('EXTENSOES_PERMITIDAS', $extensoesPermitidas);
+
+define('NOME_DIRETORIO_FILE', 'capaJogo/');
+
+const ERRO_TAMANHO_ARQUIVO = "<script> alert('Não foi possivel realizar o cadastro no Banco de Dados, pois a imagem da capa excedeu o tamanho permitido.');
+window.history.back();</script>";
+
+const ERRO_UPLOAD_IMAGEM = "<script> alert('Não foi possivel realizar o upload da imagem no Banco de Dados.');
+window.history.back();</script>";
+
+const ERRO_EXTENSOES = "<script> alert('O arquivo selecionado não obedece as extensões permitdas.');
+window.history.back();</script>";
 ?>

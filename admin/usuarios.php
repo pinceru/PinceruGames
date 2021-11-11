@@ -98,10 +98,7 @@ if(isset($_SESSION['usuario'])) {
                                 <p class="textoCrud"> <?=$rsUsuario['login']?> </p>
                             </div>
                             <div class="opcoes">
-                                <a>
-                                    <img src="../img/pesquisar.png" class="iconCrud" title="Pesquisar">
-                                </a>
-
+                                
                                 <a onclick="return confirm('Tem certeza que deseja excluir o registro do usuário selecionado?');" href="../controles/deletaUsuario.php?id=<?=$rsUsuario['id_usuario']?>">
                                     <img src="../img/fechar.png" class="iconCrud" title="Excluir">
                                 </a>

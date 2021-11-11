@@ -78,7 +78,7 @@ if(isset($_SESSION['categoria'])) {
                             <p class="textoCrud"> <?=$rsCategoria['nome']?> </p>
                         </div>
                         <div class="opcoes">
-                            <img src="../img/pesquisar.png" class="iconCrud" title="Pesquisar">
+                            
                             
                             <a onclick="return confirm('Tem certeza que deseja excluir a categoria selecionada?');" href="../controles/excluiCategoria.php?id=<?=$rsCategoria['id_categoria']?>">
                                 <img src="../img/fechar.png" class="iconCrud" title="Excluir">
