@@ -11,7 +11,7 @@ Autor: Welington Pincer
 function uploadFiles($arrayFile) {
     //Declaração de variáveis
     $fotoFile = $arrayFile;
-    $tamanho = (int) 0;
+    $tamanhoArquivo = (int) 0;
     $tipoArquivo = (string) null;
     $nomeArquivo = (string) null;
     $extensao = (string) null;
@@ -29,7 +29,7 @@ function uploadFiles($arrayFile) {
         //Verificando se o arquivo tem o tamanho permitido
         if($tamanhoArquivo <= TAMANHO_FILE) {
             //Verificando se o array do arquivo, tem uma extensão permita
-            if(in_array($fotoFile, EXTENSOES_PERMITIDAS)) {
+            if(in_array($tipoArquivo, EXTENSOES_PERMITIDAS)) {
                 //Extraindo o nome do arquivo, sem extensão
                 $nomeArquivo = pathinfo($fotoFile['name'], PATHINFO_FILENAME);
                 //Extraindo a extensão do arquivo, sem o nome

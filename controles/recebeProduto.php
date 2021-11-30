@@ -10,7 +10,7 @@ require_once('../functions/config.php');
 
 //Import do arquivo com a função para inserir no Banco de dados
 require_once(SRC.'db/inserirProduto.php');
-
+require_once(SRC.'functions/upload.php');
 $nome = (string) null;
 $preco = (float) null;
 $promocao = (float) null;
@@ -31,11 +31,12 @@ if(isset($_POST['btnProduto'])) {
     $preco = $_POST['txtPreco'];
     $promocao = $_POST['txtDesconto'];
     $descricao = $_POST['txtDescricao'];
+    $destaque = $_POST['rdoDestaque'];
     //Utilizando a função de upload 
     $capa = uploadFiles($_FILES['fleCapa']);
     
     //Verificando se nenhum campo está vazio
-    if($nome == "" || $preco == "" || $promocao == "" || $descricao == "" || $capa == "") {
+    if($nome == "" || $preco == "" || $promocao == "" || $descricao == ""/* || $capa == ""*/) {
         echo(ERRO_CAIXA_VAZIA);
     } else {
         //Criando um array com os valores resgatados

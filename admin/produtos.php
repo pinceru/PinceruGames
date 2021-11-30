@@ -1,3 +1,10 @@
+<?php
+//Import do arquivo de configurção
+require_once('../functions/config.php');
+
+//Import do arquivo com a função de exibir
+require_once(SRC.'controles/exibeProduto.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -19,7 +26,7 @@
                 <h1 class="titulo">
                     Produtos
                 </h1>
-                <form id="formCadastro" mathod="post" action="../controles/recebeProduto.php" name="frmProdutos">
+                <form enctype="multipart/form-data" id="formCadastro" method="post" action="../controles/recebeProduto.php" name="frmProdutos">
                     <div class="separarInputs">
                         <label class="label">
                             Nome do produto
@@ -28,7 +35,7 @@
                         <label class="label">
                             Descrição
                         </label>
-                        <input type="text" name="txtDescrição" class="input" placeholder="Insira a descrição do produto" value="">
+                        <input type="text" name="txtDescricao" class="input" placeholder="Insira a descrição do produto" value="">
                     </div>
                     <div class="separarInputs">
                         <label class="label">
@@ -44,8 +51,8 @@
                         <label class="label">
                             Capa do jogo
                         </label>
-                        <input type="file" name="fleCapa" accept="image/jpeg, image/jpg, image/png" class="label">
-                        <input type="radio" name="rdoNormal" value="0"> <span class="labelDestaque">Não destaque</span>
+                        <input type="file" name="fleCapa" accept="image/jpeg, image/jpg, image/png" id="labelCapa">
+                        <input type="radio" name="rdoDestaque" value="0"> <span class="labelDestaque">Não destaque</span>
                         <input type="radio" name="rdoDestaque" value="1"> <span class="labelDestaque">Destaque</span>
                     </div>
                     <input type="submit" name="btnProduto" value="Cadastrar" class="botaoCadastrar">
@@ -62,12 +69,19 @@
                             <p class="textoCrud"> Opções </p>
                         </div>
                     </div>
+                    <?php
+                        //Chamando a função de exibir categoria e guardadndo numa variável
+                        $produto = exibirProdutos();
+                        
+                        //Transformando os dados recebidos em um array e usando uma repetição para repeti-la 
+                        while($rsProduto = mysqli_fetch_assoc($produto)) {
+                    ?>
                     <div class="linhaConteudo">
                         <div class="id">
-                            <p class="textoCrud"> </p>
+                            <p class="textoCrud"> <?=$rsProduto['id_produto']?> </p>
                         </div>
                         <div class="nome">
-                            <p class="textoCrud">  </p>
+                            <p class="textoCrud"> <?=$rsProduto['nome']?> </p>
                         </div>
                         <div class="opcoes">
                             <img src="../img/pesquisar.png" class="iconCrud" title="Pesquisar">
@@ -81,6 +95,9 @@
                             </a>
                         </div>
                     </div>
+                    <?php
+                        }
+                    ?>
                 </div>
             </div>
         </main>

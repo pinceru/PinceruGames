@@ -226,6 +226,14 @@ footer{
     margin-left: 20px;
 }
 
+#labelCapa{
+    color: white;
+    font-family: verdana;
+    font-size: 1.2em;
+    margin-left: 5px;
+    margin-right: 20px;
+}
+
 .labelDestaque{
     color: white;
     font-family: verdana;

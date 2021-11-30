@@ -6,10 +6,10 @@ Autor: Welington Pincer
 *********************************************************************************/    
 
 //Constante da estrutura de pastas para o import no SENAI
-define('SRC', $_SERVER['DOCUMENT_ROOT'].'/ds2t20212/welington/ProjetoPinceruGames/');
+//define('SRC', $_SERVER['DOCUMENT_ROOT'].'/ds2t20212/welington/ProjetoPinceruGames/');
 
 //Constante da estrutura de pastas para o import em casa
-//define('SRC', $_SERVER['DOCUMENT_ROOT'].'/crud/');
+define('SRC', $_SERVER['DOCUMENT_ROOT'].'/projetoPinceruGames/');
 
 //Variaveis e constantes para conexão com o Banco de Dados
 const DB_SERVER = 'localhost';

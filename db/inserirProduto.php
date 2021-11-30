@@ -9,13 +9,13 @@ require_once('../db/conexaoMySQL.php');
 
 function inserirProduto($arrayProduto) {
     //Guaradando o script em uma variável
-    $sql = "insert into tbl_produto (nome, descricao, preco, promocao, capa) values (
+    $sql = "insert into tbl_produto (nome, descricao, preco, promocao, capa, destaque) values (
             '". $arrayProduto['nome']."',
             '". $arrayProduto['descricao']."',
             '". $arrayProduto['preco']."',
             '". $arrayProduto['promocao']."',
             '". $arrayProduto['capa']."',
-            '". $arrayProduto['destaque']."')";
+            ". $arrayProduto['destaque'].")";
     
     //Abrindo a conexão com o Banco
     $conexao = conexaoMysql();
