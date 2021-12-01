@@ -1,9 +1,37 @@
 <?php
+//Ativa a utilização de variaveis de sessão
+session_start();
+
+//Declaração das variaveis para o formulário
+$nome = (string) null;
+$destaque = (int) 0;
+$promocao = (float) null;
+$preco = (float) null;
+$descricao = (string) null;
+$id = (int) 0;
+$capa = (string) "sem-foto.jpg";
+//Essa váriavel será utilizada para definir o modo de manipulação com o banco de dados
+$modo = (string) "Salvar";
+
 //Import do arquivo de configurção
 require_once('../functions/config.php');
 
 //Import do arquivo com a função de exibir
 require_once(SRC.'controles/exibeProduto.php');
+
+//Verificando se existe a variável de sessão
+if(isset($_SESSION['produto'])) {
+    $nome = $_SESSION['produto']['nome'];
+    $descricao = $_SESSION['produto']['descricao'];
+    $preco = $_SESSION['produto']['preco'];
+    $promocao = $_SESSION['produto']['promocao'];
+    $capa = $_SESSION['produto']['capa'];
+    $destaque = $_SESSION['produto']['destaque'];
+    $id = $_SESSION['produto']['id_produto'];
+    $modo = "Atualizar";
+    //Eliminando a variável da memória
+    unset($_SESSION['produto']);
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -26,26 +54,26 @@ require_once(SRC.'controles/exibeProduto.php');
                 <h1 class="titulo">
                     Produtos
                 </h1>
-                <form enctype="multipart/form-data" id="formCadastro" method="post" action="../controles/recebeProduto.php" name="frmProdutos">
+                <form enctype="multipart/form-data" id="formCadastro" method="post" action="../controles/recebeProduto.php?modo=<?=$modo?>&id=<?=$id?>&nomecapa=<?=$capa?>" name="frmProdutos">
                     <div class="separarInputs">
                         <label class="label">
                             Nome do produto
                         </label>
-                        <input type="text" name="txtNome" class="input" placeholder="Insira o nome do produto" maxlength="100" value="">
+                        <input type="text" name="txtNome" class="input" placeholder="Insira o nome do produto" maxlength="100" value="<?=$nome?>">
                         <label class="label">
                             Descrição
                         </label>
-                        <input type="text" name="txtDescricao" class="input" placeholder="Insira a descrição do produto" value="">
+                        <input type="text" name="txtDescricao" class="input" placeholder="Insira a descrição do produto" value="<?=$descricao?>">
                     </div>
                     <div class="separarInputs">
                         <label class="label">
                             Preço
                         </label>
-                        <input type="text" name="txtPreco" class="input" placeholder="Insira o preço do produto" maxlength="10" value="">
+                        <input type="text" name="txtPreco" class="input" placeholder="Insira o preço do produto" maxlength="10" value="<?=$preco?>">
                         <label class="label">
                             Preço desconto
                         </label>
-                        <input type="text" name="txtDesconto" class="input" placeholder="Insira o valor de desconto" maxlength="10" value="">
+                        <input type="text" name="txtDesconto" class="input" placeholder="Insira o valor de desconto" maxlength="10" value="<?=$promocao?>">
                     </div>
                     <div class="separarInputs">
                         <label class="label">
@@ -55,7 +83,7 @@ require_once(SRC.'controles/exibeProduto.php');
                         <input type="radio" name="rdoDestaque" value="0"> <span class="labelDestaque">Não destaque</span>
                         <input type="radio" name="rdoDestaque" value="1"> <span class="labelDestaque">Destaque</span>
                     </div>
-                    <input type="submit" name="btnProduto" value="Cadastrar" class="botaoCadastrar">
+                    <input type="submit" name="btnProduto" value="<?=$modo?>" class="botaoCadastrar">
                 </form>
                 <div class="crud">
                     <div class="linhaTitulo">
@@ -86,11 +114,11 @@ require_once(SRC.'controles/exibeProduto.php');
                         <div class="opcoes">
                             <img src="../img/pesquisar.png" class="iconCrud" title="Pesquisar">
                             
-                            <a onclick="return confirm('Tem certeza que deseja excluir a categoria selecionada?');" href="../controles/deletaProduto.php?">
+                            <a onclick="return confirm('Tem certeza que deseja excluir a categoria selecionada?');" href="../controles/deletaProduto.php?id=<?=$rsProduto['id_produto']?>&capa=<?=$rsProduto['capa']?>">
                                 <img src="../img/fechar.png" class="iconCrud" title="Excluir">
                             </a>
                             
-                            <a href="../controles/editaCategoria.php?">
+                            <a href="../controles/editaProduto.php?id=<?=$rsProduto['id_produto']?>">
                                 <img src="../img/opcoes.png" class="iconCrud" title="Editar">
                             </a>
                         </div>

@@ -18,6 +18,9 @@ const DB_PASSWORD = 'bcd127';
 const DB_DATABASE = 'dbpincerugames';
 
 //Mensagens de erro
+const ERRO_NAO_NUMERICO = "<script> alert('Preencha os campos numéricos, com dados numéricos.');
+window.history.back();</script>";
+    
 const ERRO_CONEXAO = "<script> alert('Não foi possivel se conectar ao Banco de Dados. Entre em contato com o administrador.')</script>";
 
 const ERRO_CAIXA_VAZIA = "<script> alert('Não foi possivel realizar o cadastro no Banco de Dados, pois existem campos obrigatórios à serem preenchidos.');

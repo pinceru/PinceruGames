@@ -20,4 +20,18 @@ function listarProdutos() {
     
     return $select;
 }
+
+//Função para buscar produto pelo id
+function buscarProduto($idProduto) {
+    //Guardando o script sql dentro de uma vatriável
+    $sql = "select * from tbl_produto where id_produto = " .$idProduto;
+    
+    //Abrindo conexão com o banco
+    $conexao = conexaoMysql();
+    
+    //Solicitando a execução do script ao DB
+    $select = mysqli_query($conexao, $sql);
+    
+    return $select;
+}
 ?>
