@@ -1,6 +1,17 @@
 <?php
-//Ativando a utilização das variáveis de sessão
-session_start();
+//Import do arquivo de configuração
+require_once('../functions/config.php');
+
+//Import do arquivo com a função para exibir os usuarios
+require_once(SRC.'controles/exibeUsuario.php');
+
+if(session_status() != PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
+if(!isset($_SESSION['statusLogin']) || !$_SESSION['statusLogin'] == true) {
+    header('location:index.php');
+}
 
 //Declarando variáveis para o formulário
 $nome = (string) null;
@@ -8,12 +19,6 @@ $login = (string) null;
 $senha = (string) null;
 $id = (int) 0;
 $modo = (string) "Cadastrar";
-
-//Import do arquivo de configuração
-require_once('../functions/config.php');
-
-//Import do arquivo com a função para exibir os usuarios
-require_once(SRC.'controles/exibeUsuario.php');
 
 //Verificando se existe a variável de sessão
 if(isset($_SESSION['usuario'])) {

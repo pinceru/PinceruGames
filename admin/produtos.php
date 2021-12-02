@@ -1,6 +1,20 @@
 <?php
-//Ativa a utilização de variaveis de sessão
-session_start();
+//Import do arquivo de configurção
+require_once('../functions/config.php');
+
+//Import do arquivo com a função de exibir
+require_once(SRC.'controles/exibeProduto.php');
+
+//Import do arquivo com a função de exibir
+require_once(SRC.'controles/exibeCategoria.php');
+
+if(session_status() != PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
+if(!isset($_SESSION['statusLogin']) || !$_SESSION['statusLogin'] == true) {
+    header('location:index.php');
+}
 
 //Declaração das variaveis para o formulário
 $nome = (string) null;
@@ -11,13 +25,7 @@ $descricao = (string) null;
 $id = (int) 0;
 $capa = (string) "sem-foto.jpg";
 //Essa váriavel será utilizada para definir o modo de manipulação com o banco de dados
-$modo = (string) "Salvar";
-
-//Import do arquivo de configurção
-require_once('../functions/config.php');
-
-//Import do arquivo com a função de exibir
-require_once(SRC.'controles/exibeProduto.php');
+$modo = (string) "Cadastrar";
 
 //Verificando se existe a variável de sessão
 if(isset($_SESSION['produto'])) {
@@ -59,21 +67,21 @@ if(isset($_SESSION['produto'])) {
                         <label class="label">
                             Nome do produto
                         </label>
-                        <input type="text" name="txtNome" class="input" placeholder="Insira o nome do produto" maxlength="100" value="<?=$nome?>">
+                        <input type="text" name="txtNome" class="input" placeholder="Insira o nome do produto" maxlength="100" value="">
                         <label class="label">
                             Descrição
                         </label>
-                        <input type="text" name="txtDescricao" class="input" placeholder="Insira a descrição do produto" value="<?=$descricao?>">
+                        <input type="text" name="txtDescricao" class="input" placeholder="Insira a descrição do produto" value="">
                     </div>
                     <div class="separarInputs">
                         <label class="label">
                             Preço
                         </label>
-                        <input type="text" name="txtPreco" class="input" placeholder="Insira o preço do produto" maxlength="10" value="<?=$preco?>">
+                        <input type="text" name="txtPreco" class="input" placeholder="Insira o preço do produto" maxlength="10" value="">
                         <label class="label">
                             Preço desconto
                         </label>
-                        <input type="text" name="txtDesconto" class="input" placeholder="Insira o valor de desconto" maxlength="10" value="<?=$promocao?>">
+                        <input type="text" name="txtDesconto" class="input" placeholder="Insira o valor de desconto" maxlength="10" value="">
                     </div>
                     <div class="separarInputs">
                         <label class="label">
@@ -82,6 +90,25 @@ if(isset($_SESSION['produto'])) {
                         <input type="file" name="fleCapa" accept="image/jpeg, image/jpg, image/png" id="labelCapa">
                         <input type="radio" name="rdoDestaque" value="0"> <span class="labelDestaque">Não destaque</span>
                         <input type="radio" name="rdoDestaque" value="1"> <span class="labelDestaque">Destaque</span>
+                    </div>
+                    <div class="separarInputs">
+                        <label id="labelCategoria">
+                            Categorias
+                        </label>  
+                        <div id="grid">
+                        <?php
+                            $dadosCategoria = listarCategoria();
+                            
+                            while($categorias = mysqli_fetch_assoc($dadosCategoria)) {
+                        ?>
+                            <div class="tudo">
+                                <input type="checkbox" value="" name="chk<?=$categorias['id_categoria']?>">
+                                <label class="labelCheck"><?=$categorias['nome']?></label>
+                            </div>
+                        <?php
+                            }
+                        ?>
+                        </div>
                     </div>
                     <input type="submit" name="btnProduto" value="<?=$modo?>" class="botaoCadastrar">
                 </form>

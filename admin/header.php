@@ -1,11 +1,11 @@
         <header>
-            <div id="conteudoCabecalho">
+            <div class="conteudoCabecalho">
                 <div id="conteudoEsquerdo">
                     <div id="linhaSuperior">
                         <div id="cms">
                             <label> C M S </label>
                         </div>
-                        <div id="titulo">
+                        <div class="titulo">
                             <label> PINCERU GAMES </label>
                         </div>
                     </div>

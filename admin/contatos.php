@@ -4,6 +4,15 @@ require_once('../functions/config.php');
 
 //Import do arquivo com a função para exibir os contatos
 require_once(SRC.'controles/exibeContato.php');
+
+if(session_status() != PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
+if(!isset($_SESSION['statusLogin']) || !$_SESSION['statusLogin'] == true) {
+    header('location:index.php');
+}
+
 ?>
 
 <!DOCTYPE html>

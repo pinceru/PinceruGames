@@ -43,7 +43,7 @@
                     </a>
                     <div id="usuario">
                         <div id="mensagem">
-                            Bem vindo(a) Wanda
+                            <?=$_SESSION['nomeUsuario']?>
                         </div>
                         <div id="imagem">
                             <img src="../img/usuario.png" id="imgPerfil">

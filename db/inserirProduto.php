@@ -28,4 +28,29 @@ function inserirProduto($arrayProduto) {
     }
 }
 
+function pesquisarId() {
+	$sql = "select id_produto from tbl_produto order by id_produto desc limit 1";
+		
+	 $conexao = conexaoMysql();
+  
+    if($select = mysqli_query($conexao, $sql)){
+        return $select;
+    } else {
+        return false;
+    }
+}
+
+function inserirProdutoCategoria($idCategoria) {
+	  $idProduto = mysqli_fetch_assoc(pesquisarId());
+	  $sql = "insert into tbl_produto_categoria(id_produto, id_categoria) 
+                values('".$idProduto['id_produto']."', '".$idCategoria."')";
+	
+	$conexao = conexaoMysql();
+    
+    if(mysqli_query($conexao, $sql)){
+        return true;
+    } else {
+        return false;
+    }
+}
 ?>

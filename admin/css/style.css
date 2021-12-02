@@ -9,7 +9,14 @@ header{
     background-color: #161b22;
 }
 
-#conteudoCabecalho{
+#autenticar{
+    color: white;
+    font-family: verdana;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.conteudoCabecalho{
     width: 1200px;
     height: inherit;
     margin-left: auto;
@@ -44,7 +51,7 @@ header{
     font-size: 2em;
 }
 
-#titulo{
+.titulo{
     height: inherit;
     width: 60%;
     float: left;
@@ -226,6 +233,21 @@ footer{
     margin-left: 20px;
 }
 
+#labelCategoria{
+    color: white;
+    font-family: verdana;
+    font-size: 1.2em;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.labelCheck{
+    color: white;
+    font-family: verdana;
+    font-size: 1.2em;
+    margin-right: 20px;
+}
+
 #labelCapa{
     color: white;
     font-family: verdana;
@@ -380,4 +402,16 @@ footer{
 
 .separarInputs{
     margin-bottom: 20px;
+}
+
+#grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.tudo{
+    margin-top: 5px;
+    margin-bottom: 5px;
 }

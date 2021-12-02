@@ -32,8 +32,13 @@ window.history.back();</script>";
 const ERRO_MAXLENGTH = "<script> alert('Não foi possivel realizar o cadastro no Banco de Dados, pois algum campo excedeu o número de caractéres permitidos.');
 window.history.back();</script>";
 
+const MSG_LOGIN_INVALIDO = "<script> alert('Usúario ou senha inválidos');
+window.location.back(); </script>";
+
 const ERRO_MINLENGTH = "<script> alert('Senha muito curta!');
 window.history.back();</script>";
+
+const ERRO_SEM_CATEGORIA = "<script> alert('O produto deverá percenter a no mínino uma categoria'); window.history.back(); </script>";
 
 const MSG_CADASTRO_SUCESSO = 'Cadastro realizado com sucesso!';
 

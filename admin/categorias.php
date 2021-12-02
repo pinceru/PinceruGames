@@ -1,17 +1,22 @@
 <?php
-//Ativando a utilização das variáveis de sessão
-session_start();
-
-//Declarando variáveis para o formulário
-$nome = (string) null;
-$id = (int) 0;
-$modo = (string) "Cadastrar";
-    
 //Import do arquivo de configurção
 require_once('../functions/config.php');
 
 //Import do arquivo para exibir categoria
 require_once(SRC.'controles/exibeCategoria.php');
+
+if(session_status() != PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
+if(!isset($_SESSION['statusLogin']) || !$_SESSION['statusLogin'] == true) {
+    header('location:index.php');
+}
+
+//Declarando variáveis para o formulário
+$nome = (string) null;
+$id = (int) 0;
+$modo = (string) "Cadastrar";
 
 //Verificando se existe a variável de sessão
 if(isset($_SESSION['categoria'])) {

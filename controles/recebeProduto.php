@@ -13,6 +13,8 @@ require_once(SRC.'db/inserirProduto.php');
 require_once(SRC.'db/atualizarProduto.php');
 //Import do arquivo para fazer o upload de imagens
 require_once(SRC.'functions/upload.php');
+//Import do arquivo para listar categoria
+require_once(SRC.'controles/exibeCategoria.php');
 
 $nome = (string) null;
 $preco = (float) null;
@@ -20,6 +22,8 @@ $promocao = (float) null;
 $descricao = (string) null;
 $capa = (string) null;
 $destaque = (int) 0;
+$nameCheckbox = (string) null;
+$marcacao = (string) null;
 
 //Verificando se o id está chegando pela url
 if(isset($_GET['id'])) {
@@ -66,6 +70,26 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif(strlen($nome) > 100) {
         echo(ERRO_MAXLENGTH);
     } else {
+        $listar = listarCategoria();
+			
+		//Tratativa para verificar se alguma catergoria foi selecionada 
+		while($categoria = mysqli_fetch_assoc($listar)){
+					
+				$nameCheckbox = 'chk'.$categoria['id_categoria'];
+		
+				if(isset($_POST[$nameCheckbox])){
+					$marcacao = $marcacao.'true'; 
+				} else {
+					$marcacao = $marcacao.'false';  
+				}
+			}
+			
+        //verificando as categorias que foram marcadas com verdadeiro ou falso	
+		$qtdMarcacao = substr_count($marcacao,"true");
+	
+		if($qtdMarcacao == 0){
+			echo(ERRO_SEM_CATEGORIA);
+		} else {
         //Criando um array com os valores resgatados
         $arrayProduto = array(
             "nome" => $nome,
@@ -78,7 +102,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         );
         
         if(strtoupper($_GET["modo"]) == "CADASTRAR") {
-         if(inserirProduto($arrayProduto)) {
+            if(inserirProduto($arrayProduto)) {
+                $listaCategorias = listarCategoria();
+					while($categoria = mysqli_fetch_assoc($listaCategorias)) {
+		
+						$nameCheckbox = 'chk'.$categoria['id_categoria'];
+
+						if(isset($_POST[$nameCheckbox])){
+							inserirProdutoCategoria($categoria['id_categoria']);
+							}
+						}
             echo("
                     <script>
                         alert('". MSG_CADASTRO_SUCESSO ."');
@@ -98,6 +131,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     ");
             } else {
                 echo(MSG_ERRO);
+                }
             }
         }
     }
