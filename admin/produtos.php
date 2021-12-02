@@ -26,6 +26,7 @@ $id = (int) 0;
 $capa = (string) "sem-foto.jpg";
 //Essa váriavel será utilizada para definir o modo de manipulação com o banco de dados
 $modo = (string) "Cadastrar";
+$status = (string) "false";
 
 //Verificando se existe a variável de sessão
 if(isset($_SESSION['produto'])) {
@@ -67,29 +68,29 @@ if(isset($_SESSION['produto'])) {
                         <label class="label">
                             Nome do produto
                         </label>
-                        <input type="text" name="txtNome" class="input" placeholder="Insira o nome do produto" maxlength="100" value="">
+                        <input type="text" name="txtNome" class="input" placeholder="Insira o nome do produto" maxlength="100" value="<?=$nome?>">
                         <label class="label">
                             Descrição
                         </label>
-                        <input type="text" name="txtDescricao" class="input" placeholder="Insira a descrição do produto" value="">
+                        <input type="text" name="txtDescricao" class="input" placeholder="Insira a descrição do produto" value="<?=$descricao?>">
                     </div>
                     <div class="separarInputs">
                         <label class="label">
                             Preço
                         </label>
-                        <input type="text" name="txtPreco" class="input" placeholder="Insira o preço do produto" maxlength="10" value="">
+                        <input type="text" name="txtPreco" class="input" placeholder="Insira o preço do produto" maxlength="10" value="<?=$preco?>">
                         <label class="label">
                             Preço desconto
                         </label>
-                        <input type="text" name="txtDesconto" class="input" placeholder="Insira o valor de desconto" maxlength="10" value="">
+                        <input type="text" name="txtDesconto" class="input" placeholder="Insira o valor de desconto" maxlength="10" value="<?=$promocao?>">
                     </div>
                     <div class="separarInputs">
                         <label class="label">
                             Capa do jogo
                         </label>
                         <input type="file" name="fleCapa" accept="image/jpeg, image/jpg, image/png" id="labelCapa">
-                        <input type="radio" name="rdoDestaque" value="0"> <span class="labelDestaque">Não destaque</span>
-                        <input type="radio" name="rdoDestaque" value="1"> <span class="labelDestaque">Destaque</span>
+                        <input type="radio" name="rdoDestaque" value="0" <?=$destaque==0?"checked":""?>> <span class="labelDestaque">Não destaque</span>
+                        <input type="radio" name="rdoDestaque" value="1" <?=$destaque==1?"checked":""?>> <span class="labelDestaque">Destaque</span>
                     </div>
                     <div class="separarInputs">
                         <label id="labelCategoria">
@@ -100,9 +101,10 @@ if(isset($_SESSION['produto'])) {
                             $dadosCategoria = listarCategoria();
                             
                             while($categorias = mysqli_fetch_assoc($dadosCategoria)) {
+                                $status = categoriaChecked($id, $categorias['id_categoria']);
                         ?>
                             <div class="tudo">
-                                <input type="checkbox" value="" name="chk<?=$categorias['id_categoria']?>">
+                                <input type="checkbox" value="" name="chk<?=$categorias['id_categoria']?>" <?=$status=="true"?"checked":""?>>
                                 <label class="labelCheck"><?=$categorias['nome']?></label>
                             </div>
                         <?php

@@ -26,3 +26,22 @@ create table tbl_contato(
 );
 
 select * from tbl_contato;
+
+create table tbl_produto(
+	id_produto int not null auto_increment primary key,
+    nome varchar(100) not null,
+    preco float not null,
+    promocao float not null,
+    descricao text not null,
+    capa varchar(100) not null,
+    destaque boolean not null
+);
+
+select * from tbl_produto;
+
+create table tbl_produto_categoria(
+	id_produto_categoria int not null auto_increment primary key,
+    id_produto int not null,
+    id_categoria int not null,
+    
+);

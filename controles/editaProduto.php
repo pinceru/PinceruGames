@@ -30,5 +30,4 @@ if($rsProduto = mysqli_fetch_assoc($dadosProduto)) {
 } else {
     echo(MSG_ERRO);
 }
-
 ?>

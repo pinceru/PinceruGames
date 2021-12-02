@@ -30,5 +30,7 @@ if($login != "" && $senha != "") {
     } else {
         echo(MSG_LOGIN_INVALIDO);
     }
+} else {
+    echo(MSG_LOGIN_INVALIDO);
 }
 ?>

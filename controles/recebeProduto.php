@@ -9,8 +9,10 @@ Autor: Welington Pincer
 require_once('../functions/config.php');
 //Import do arquivo com a função para inserir no Banco de dados
 require_once(SRC.'db/inserirProduto.php');
-//Import do arquivo para atualizar clientes
+//Import do arquivo para atualizar produtos
 require_once(SRC.'db/atualizarProduto.php');
+//Import do arquivo para excluir produto
+require_once(SRC.'db/excluirProduto.php');
 //Import do arquivo para fazer o upload de imagens
 require_once(SRC.'functions/upload.php');
 //Import do arquivo para listar categoria
@@ -123,7 +125,24 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         } elseif(strtoupper($_GET["modo"]) == "ATUALIZAR") {
             if(editarProduto($arrayProduto)) {
-                echo("
+                $exibirCategoria = listarCategoria();
+					while($categoria1 = mysqli_fetch_assoc($exibirCategoria)){
+		
+						$nameCheckbox = 'chk'.$categoria1['id_categoria'];
+						
+						if(isset($_POST[$nameCheckbox])){
+							if(!buscarCategoriaProduto($arrayProduto['id'], $categoria['id_categoria'])){
+								editarProduto($arrayProduto);
+								produtoCategoria($arrayProduto['id'], $categoria['id_categoria']);
+							} 
+						} else {
+							$funcaoDeletar = buscarCategoriaProduto($arrayProduto['id'], $categoria['id_categoria']);
+							if($funcaoDeletar){
+								atualizarCategoriaProduto($arrayProduto['id'], $categoria['id_categoria']);
+				            }
+						}
+				    }
+                 echo("
                         <script>
                             alert('". MSG_ATUALIZADO_SUCESSO ."');
                             window.location.href = '../admin/produtos.php';

@@ -50,13 +50,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo(ERRO_MINLENGTH);
     } else {
         //Criptografando a senha
-        $criptografia = sha1($senha);
+        //$criptografia = sha1($senha);
         
         //Criando um array com os valores resgatados 
         $arrayUsuario = array(
             "nome" => $nome,
             "login" => $login,
-            "senha" => $criptografia,
+            "senha" => $senha,
             "id_usuario" => $id
         );
         

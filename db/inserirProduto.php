@@ -53,4 +53,18 @@ function inserirProdutoCategoria($idCategoria) {
         return false;
     }
 }
+
+function produtoCategoria($idProduto, $idCategoria){
+	  $sql = "insert into tbl_produto_categoria(id_produto, id_categoria) 
+                    values('".$idProduto."', '".$idCategoria."')";
+	
+	$conexao = conexaoMysql();
+    
+    if(mysqli_query($conexao, $sql)){
+        return true;
+    } else {
+        return false;
+    }
+}
+
 ?>

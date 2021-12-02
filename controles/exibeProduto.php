@@ -6,6 +6,8 @@ Autor: Welington Pincer
 **********************************************************************************/
 //Import do arquivo co a função de listar
 require_once(SRC.'db/listarProdutos.php');
+//Import do arquivo de atualizar produtos
+require_once(SRC.'db/atualizarProduto.php');
 
 //Função para exibir produtos
 function exibirProdutos() {
@@ -13,5 +15,12 @@ function exibirProdutos() {
     $dados = listarProdutos();
     
     return $dados;
+}
+
+//Função para checked no checkbox e radius
+function categoriaChecked($idProduto, $idCategoria) {
+    $exibirDados = buscarCategoriaProduto($idProduto, $idCategoria);
+    
+    return $exibirDados;
 }
 ?>

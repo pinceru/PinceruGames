@@ -27,4 +27,20 @@ function editarProduto($arrayProduto) {
     }
 }
 
+function buscarCategoriaProduto($idProduto, $idCategoria) {
+    $sql = "select id_categoria from tbl_produto_categoria
+    where id_produto = ".$idProduto." and id_categoria = ".$idCategoria." limit 1";
+    
+    $conexao = conexaoMysql();
+    
+    if(mysqli_query($conexao, $sql)) {
+		if(mysqli_affected_rows($conexao) == 1) {
+			return true; 
+		} else {
+			 return false; 
+		}
+    } else {
+        return false; 
+    }
+}
 ?>

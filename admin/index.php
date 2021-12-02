@@ -13,21 +13,23 @@
                 <label id="autenticar"> AUTENTICAÇÃO </label>
             </div>
         </header>
-        <main>
-            <form enctype="multipart/form-data" action="autenticar.php" name="frmCadastro" method="post">
+        <main class="loginCorpo">
+            <form enctype="multipart/form-data" action="autenticar.php" name="frmCadastro" method="post" id="login">
                 <div class="separarInputs">
                     <label class="label"> Login </label>
                     <input type="text" name="txtLogin" value="" placeholder="Digite seu Login" maxlength="45">
                 </div>
                 <div class="separarInputs">
                     <label class="label"> Senha </label>
-                    <input type="text" name="txtSenha" value="" placeholder="Digite sua senha" maxlength="45">
+                    <input type="password" name="txtSenha" value="" placeholder="Digite sua senha" maxlength="45">
                 </div>
                 <input type="submit" name="btnBuscar" value="Entrar" class="botaoCadastrar">
             </form>
         </main>
         <footer>
-        
+            <?php
+                require_once('footer.php');
+            ?>
         </footer>
     </body>
 </html>

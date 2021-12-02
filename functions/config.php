@@ -6,10 +6,10 @@ Autor: Welington Pincer
 *********************************************************************************/    
 
 //Constante da estrutura de pastas para o import no SENAI
-//define('SRC', $_SERVER['DOCUMENT_ROOT'].'/ds2t20212/welington/ProjetoPinceruGames/');
+define('SRC', $_SERVER['DOCUMENT_ROOT'].'/ds2t20212/welington/ProjetoPinceruGames/');
 
 //Constante da estrutura de pastas para o import em casa
-define('SRC', $_SERVER['DOCUMENT_ROOT'].'/projetoPinceruGames/');
+//define('SRC', $_SERVER['DOCUMENT_ROOT'].'/projetoPinceruGames/');
 
 //Variaveis e constantes para conexão com o Banco de Dados
 const DB_SERVER = 'localhost';
@@ -32,8 +32,8 @@ window.history.back();</script>";
 const ERRO_MAXLENGTH = "<script> alert('Não foi possivel realizar o cadastro no Banco de Dados, pois algum campo excedeu o número de caractéres permitidos.');
 window.history.back();</script>";
 
-const MSG_LOGIN_INVALIDO = "<script> alert('Usúario ou senha inválidos');
-window.location.back(); </script>";
+const MSG_LOGIN_INVALIDO = " <script> alert('Login ou senha inválida.');
+window.location.href = '../admin/index.php';</script>";
 
 const ERRO_MINLENGTH = "<script> alert('Senha muito curta!');
 window.history.back();</script>";
