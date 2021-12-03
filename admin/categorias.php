@@ -1,6 +1,4 @@
 <?php
-/*Comentário para testar o git diff*/
-
 //Import do arquivo de configurção
 require_once('../functions/config.php');
 
