@@ -108,7 +108,7 @@ if(isset($_SESSION['produto'])) {
                                 <label class="labelCheck"><?=$categorias['nome']?></label>
                             </div>
                         <?php
-                            }
+                            } 
                         ?>
                         </div>
                     </div>
