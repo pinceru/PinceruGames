@@ -68,11 +68,11 @@ if(isset($_SESSION['produto'])) {
                         <label class="label">
                             Nome do produto
                         </label>
-                        <input type="text" name="txtNome" class="input" placeholder="Insira o nome do produto" maxlength="100" value="<?=$nome?>">
+                        <input type="text" name="txtNome" class="input" placeholder="Insira o nome do produto" maxlength="20" value="<?=$nome?>">
                         <label class="label">
                             Descrição
                         </label>
-                        <input type="text" name="txtDescricao" class="input" placeholder="Insira a descrição do produto" value="<?=$descricao?>">
+                        <input type="text" name="txtDescricao" class="input" placeholder="Insira a descrição do produto" maxlength="70" value="<?=$descricao?>">
                     </div>
                     <div class="separarInputs">
                         <label class="label">

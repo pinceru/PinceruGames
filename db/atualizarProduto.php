@@ -5,7 +5,7 @@ Data: 01/12/2021
 Autor: Welington Pincer
 ****************************************************/
 //Import do arquivo de conexão com bd
-require_once('../db/conexaoMysql.php');
+require_once(SRC.'db/conexaoMysql.php');
 
 function editarProduto($arrayProduto) {
     $sql = "update tbl_produto set

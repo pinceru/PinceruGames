@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title> Projeto CRUD </title>
+    <script src="js/script.js" defer></script>
     <link href="style.css" type="text/css" rel="stylesheet">
     </head>
     <body>
@@ -63,74 +64,13 @@
                         </div>
                     </div>
                     <div id="pesquisar">
-                        <form method="post" name="frmPesquisa" action="">
-                            <label> Pesquisa </label>
-                            <input type="text" id="barraPesquisa" name="txtPesquisa" placeholder="Buscar jogo" maxlength="100">
-                            <input type="submit" id="botaoPesquisa" value="Buscar" name="btnPesquisa">
-                        </form>
+                        <label> Pesquisa </label>
+                        <input type="text" id="barraPesquisa" name="txtPesquisa" placeholder="Buscar jogo" maxlength="100">
+                        <button id="botaoPesquisa" value="Buscar" name="btnPesquisa">Buscar</button>
                     </div>
                 </div>
                 <div id="apresentacaoJogos">
-                    <div class="jogos">
-                        <div class="imgJogo">
-                            <img src="capaJogo/minecraft.jpg" class="capaJogo">
-                        </div>
-                        <div class="infoJogo">
-                            <h2> Minecraft </h2>
-                            <p class="txtInfoJogo">
-                                Explore seu mundo original, sobreviva à noite e crie tudo o que possa imaginar!
-                            </p>
-                            <p class="generos">
-                                AVENTURA - ONLINE - SIMULAÇÃO
-                            </p>
-                            <div class="saibaMais">
-                                Saiba mais
-                            </div>
-                            <div class="valor">
-                                R$ 89,99
-                            </div>
-                        </div>
-                    </div>
-                    <div class="jogos">
-                        <div class="imgJogo">
-                            <img src="capaJogo/mkx.jpg" class="capaJogo">
-                        </div>
-                        <div class="infoJogo">
-                            <h2> Mortal Kombat X </h2>
-                            <p class="txtInfoJogo">
-                                Experimente a próxima geração da maior franquia de jogos de luta!
-                            </p>
-                            <p class="generos">
-                                AÇÃO - ONLINE
-                            </p>
-                            <div class="saibaMais">
-                                Saiba mais
-                            </div>
-                            <div class="valor">
-                                R$ 59,90
-                            </div>
-                        </div>
-                    </div>
-                    <div class="jogos">
-                        <div class="imgJogo">
-                            <img src="capaJogo/fifa22.jpg" class="capaJogo">
-                        </div>
-                        <div class="infoJogo">
-                            <h2> FIFA 22 </h2>
-                            <p class="txtInfoJogo">
-                                O jogo de futebol mais real da história, com avanços inimagináveis!
-                            </p>
-                            <p class="generos">
-                                ESPORTE - SIMULAÇÃO
-                            </p>
-                            <div class="saibaMais">
-                                Saiba mais
-                            </div>
-                            <div class="valor">
-                                R$ 249,00
-                            </div>
-                        </div>
-                    </div>
+             
                 </div>
             </div>
             <div id="linkEmpresa">
