@@ -48,9 +48,9 @@ const pesquisar = async (evento) => {
 
 const carregarPaginas = async () => {
     const url = `http://localhost/ds2t20212/welington/ProjetoPinceruGames/admin/api/produtos`
-		const imagensResponse = await fetch(url);
-		const imagens = await imagensResponse.json();
-		imagens.map(criarItemJogo);
+    const imagensResponse = await fetch(url);
+    const imagens = await imagensResponse.json();
+    imagens.map(criarItemJogo);
 }
 
 const criarCategorias = (categorias) => {
@@ -58,7 +58,7 @@ const criarCategorias = (categorias) => {
     const containerCategoria = document.querySelector("#subMeuHamburguer")
     //Criando uma nova div
     const novaUl = document.createElement("ul")
-	//novaUl.classList.add('subMenuHamburguer')
+	//novaUl.classList.add('')
    	novaUl.innerHTML =
 	`
         <li class="itemListaSubMenu" data-id="${categorias.id}"> ${categorias.nome} </li>
@@ -67,11 +67,12 @@ const criarCategorias = (categorias) => {
 }
 
 const verCategorias = async (evento) => {
-        //limparElementos(document.querySelector("#listaGeneros"));
-		const url = `http://localhost/ds2t20212/welington/ProjetoPinceruGames/admin/api/categorias`
-		const categoriaResponse = await fetch(url);
-        const categorias = await categoriaResponse.json();
-        categorias.map(criarCategorias)	
+    limparElementos(document.querySelector("#subMeuHamburguer"));
+    const url = `http://localhost/ds2t20212/welington/ProjetoPinceruGames/admin/api/categorias`
+    const categoriaResponse = await fetch(url);
+    const categorias = await categoriaResponse.json();
+    categorias.map(criarCategorias)	
+        
 }
 
 document.addEventListener("DOMContentLoaded", carregarPaginas);
