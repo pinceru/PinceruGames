@@ -183,14 +183,18 @@ main{
     text-align: center;
 }
 
+ul{
+    list-style: none;
+}
+
 .itemListaSubMenu:hover{
-    height: 50px;
+    /*height: 50px;
     width: 80px;
     text-align: center;
     font-family: verdana;
-    font-size: 1.1em;
+    font-size: 1.1em;*/
     cursor: pointer;
-    padding-top: 10px;
+    /*padding-top: 10px;*/
 }
 
 #pesquisar{
@@ -275,7 +279,8 @@ h2{
 }
 
 .txtInfoJogo{
-    width: 100px;
+    width: 330px;
+    height: 40px;
     margin-top: 5px;
     margin-left: 10px;
     margin-right: 10px;
@@ -472,7 +477,7 @@ h1{
     height: 400px;
     background-color: #15243B;
 }
-
+ 
 #corpoInformacoes{
     width: 1200px;
     height: inherit;

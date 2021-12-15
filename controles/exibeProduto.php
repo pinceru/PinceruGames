@@ -10,6 +10,13 @@ require_once(SRC.'db/listarProdutos.php');
 require_once(SRC.'db/atualizarProduto.php');
 
 //Função para exibir produtos
+function exibirProdutosAPI() {
+    //Chamando a função que busca os dados no Banco
+    $dados = listarProdutosAPI();
+    
+    return $dados;
+}
+
 function exibirProdutos() {
     //Chamando a função que busca os dados no Banco
     $dados = listarProdutos();
@@ -20,6 +27,12 @@ function exibirProdutos() {
 //Função para buscar o nome do produto
 function buscarNomeProduto($nome) {
     $dados = buscarNome($nome);
+    return $dados;
+}
+
+//Função para buscar o nome do produto
+function buscarProdutoCategoria($id) {
+    $dados = buscarProdutoIdCategoria($id);
     return $dados;
 }
 
