@@ -1,3 +1,5 @@
+#### [parado]
+
 # pinceruGames
 
 ## Projeto criado com foco no aprendizado da saída de dados do Banco
