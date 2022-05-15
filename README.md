@@ -23,5 +23,15 @@
 ### A interface do projeto não era o foco da matéria, então não houve preocupação com a responsividade ou em terminar o consumo de API.
 ### A interface foi feita exclusivamente com HTML e CSS puro, o Javascript só foi usado para o consumo da API. E o banco de dados foi desenvolvido no MySQL, a partir do MySQL Workbench.
 ### Não foram feitos testes automatizados no projeto.
+### A aplicação roda no xampp.
 
 ## Os conhecimentos aplicados no projeto, foram ensinados pelo professor Marcel Neves, meu professor de Banco de Dados e Back-End no SENAI.
+
+ <div style="display: inline_block"><br>
+   <img align="center" alt="PHP" height="60" width="65"  src="https://cdn-icons-png.flaticon.com/512/919/919830.png">
+   <img align="center" alt="MySQL" height="65" width="65" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"/>
+   <img align="center" alt="HTML" height="65" width="65" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+   <img align="center" alt="CSS" height="65" width="65" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
+   <img align="center" alt="Js" height="65" width="65" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+                                                                                                                                          
+</div>
