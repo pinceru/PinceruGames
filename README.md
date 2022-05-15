@@ -25,6 +25,10 @@
 ### Não foram feitos testes automatizados no projeto.
 ### A aplicação roda no xampp.
 
+## Conclusão
+
+### Primeira vez que fiz algo que realmente senti que estava programando. Esse projeto carrega muito carinho.
+
 ## Os conhecimentos aplicados no projeto, foram ensinados pelo professor Marcel Neves, meu professor de Banco de Dados e Back-End no SENAI.
 
  <div style="display: inline_block"><br>
