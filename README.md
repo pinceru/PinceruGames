@@ -13,7 +13,7 @@
 
 ### Primeiro projeto realizado para a aula de back-end no curso de Desenvolvimento de Sistemas do SENAI Jandira, ainda no segundo termo.
 ### Trata-se de um projeto individual proposto pelo professor Marcel Neves, onde tivemos que desenvolver toda a lógica, a interface e o banco de dados da aplicação. Posteriormente sendo desnvolvido uma API com o método GET, que teriamos que consumir ainda nesse projeto.
-### O projeto serviu também, para aplicar pela primeira vez, a idéia de estrutura de pastas, apesar de na época ele nos ensinar com os nomes em português.
+### O projeto serviu também, para aplicar pela primeira vez, a idéia de estrutura de pastas.
 
 ## O que foi utilizado para desenvolvê-lo?
 
