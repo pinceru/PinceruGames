@@ -2,34 +2,32 @@
 
 # Pinceru Games
 
-## O que é este projeto?
+##
 
-### Pinceru Games é um sistema de vendas online de jogos usados.
-### Ele possui um CMD para o admin cadastrar os jogos, as categorias e etc.
-### No feed principal, o comprador pode buscar por jogos específicos ou categorias, abrir um modal com mais detalhes do jogo e compra-lo.
-### O comprador pode também deixar dados para contato, que pode ser visto a partir do CMD pelo admin.
+## O que é este projeto?
+#### Sistema fictício para venda de jogos usados online.
+#### Você anuncía os seus jogos e outras pessoas acessam para comprar.
+#### Provavelmente você já sabe como um comércio funciona.
 
 ## Por que o projeto foi feito?
+#### Foi um trabalho realizado para a aula de back-end, no segundo termo do curso técnico de Desenvolvimento de Sistemas.
+#### O trabalho tinha como objetivo a realização de um CRUD com acesso ao Banco de Dados.
+#### O foco era colocar em prática os conhecimentos de:
+##### - Lógica de programação.
+##### - Estrutura de pastas.
+##### - Banco de Dados.  
 
-### Primeiro projeto realizado para a aula de back-end no curso de Desenvolvimento de Sistemas do SENAI Jandira, ainda no segundo termo.
-### Trata-se de um projeto individual proposto pelo professor Marcel Neves, onde tivemos que desenvolver toda a lógica, a interface e o banco de dados da aplicação. Posteriormente sendo desnvolvido uma API com o método GET, que teriamos que consumir ainda nesse projeto.
-### O projeto serviu também, para aplicar pela primeira vez, a idéia de estrutura de pastas.
+## Como funciona?
+#### O usuário admin tem acesso ao CMD, onde pode cadastrar seus jogos e categorias disponiveis.
+#### No feed principal, o comprador pode visualizar e interagir com esses jogos, além de usar a barra de pesquisa para procurar jogos específicos.
+#### O comprador pode também deixar seu endereço e dados para contato, caso tenha dúvidas ou queixas. Esses dados podem ser vistos no CMD pelo admin.
 
-## O que foi utilizado para desenvolvê-lo?
+## Requisitos:
+##### - Apache XAMPP
+##### - MySQL
 
-### O Figma foi utilizado para a prototipação das telas e o código foi todo desenvolvido no Brackets.
-### Para a realização do "back-end", foi utilizada a linguagem PHP, sem uso de nenhum framework. E para a API, foi utilizado a biblioteca Slim, ainda com o PHP.
-### O projeto foi feito no paradigma funcional, por ser só o que sabia na época.
-### A interface do projeto não era o foco da matéria, então não houve preocupação com a responsividade ou em terminar o consumo de API.
-### A interface foi feita exclusivamente com HTML e CSS puro, o Javascript só foi usado para o consumo da API. E o banco de dados foi desenvolvido no MySQL, a partir do MySQL Workbench.
-### Não foram feitos testes automatizados no projeto.
-### A aplicação roda no xampp.
-
-## Conclusão
-
-### Primeira vez que fiz algo que realmente senti que estava programando. Esse projeto carrega muito carinho.
-
-## Os conhecimentos aplicados no projeto, foram ensinados pelo professor Marcel Neves, meu professor de Banco de Dados e Back-End no SENAI.
+## Nota:
+#### O repositório não contém os scripts do banco. Sendo assim, não é possível executá-lo.
 
  <div style="display: inline_block"><br>
    <img align="center" alt="PHP" height="60" width="65"  src="https://cdn-icons-png.flaticon.com/512/919/919830.png">
