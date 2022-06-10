@@ -13,9 +13,9 @@
 #### Foi um trabalho realizado para a aula de back-end, no segundo termo do curso técnico de Desenvolvimento de Sistemas.
 #### O trabalho tinha como objetivo a realização de um CRUD com acesso ao Banco de Dados.
 #### O foco era colocar em prática os conhecimentos de:
-##### - Lógica de programação.
-##### - Estrutura de pastas.
-##### - Banco de Dados.  
+##### - ```Lógica de programação.```
+##### - ```Estrutura de pastas.```
+##### - ```Banco de Dados.```  
 
 ## Como funciona?
 #### O usuário admin tem acesso ao CMD, onde pode cadastrar seus jogos e categorias disponiveis.
@@ -23,11 +23,11 @@
 #### O comprador pode também deixar seu endereço e dados para contato, caso tenha dúvidas ou queixas. Esses dados podem ser vistos no CMD pelo admin.
 
 ## Requisitos:
-##### - Apache XAMPP
-##### - MySQL
+##### - ```Apache XAMPP```
+##### - ```MySQL```
 
 ## Nota:
-#### O repositório não contém os scripts do banco. Sendo assim, não é possível executá-lo.
+#### `O repositório não contém os scripts do banco. Sendo assim, não é possível executá-lo`.
 
  <div style="display: inline_block"><br>
    <img align="center" alt="PHP" height="60" width="65"  src="https://cdn-icons-png.flaticon.com/512/919/919830.png">
